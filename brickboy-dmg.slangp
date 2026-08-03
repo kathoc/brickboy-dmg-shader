@@ -1,0 +1,55 @@
+shaders = 6
+
+# Ported from brickboy's src/display pipeline (DMG-01 profile).
+# Pass order matches src/display/pipeline.ts: crosstalk field -> colour correct
+# -> grid -> ghost -> present finish.
+
+# Pre-pass: passive-matrix crosstalk field at native resolution.
+shader0 = shaders/xtalk-field.slang
+scale_type0 = source
+scale0 = 1.0
+filter_linear0 = false
+float_framebuffer0 = true
+
+# Colour correction + LCD stack. Renders the whole module (dot field + margin).
+shader1 = shaders/color-correct.slang
+scale_type1 = viewport
+scale1 = 1.0
+filter_linear1 = false
+float_framebuffer1 = true
+
+# Dot structure, drop-shadow, reflector grain, printed border.
+shader2 = shaders/grid.slang
+scale_type2 = viewport
+scale2 = 1.0
+filter_linear2 = false
+float_framebuffer2 = true
+
+# LCD persistence. The feedback buffer IS the analog cell state, so it must be
+# float - an 8 bit buffer quantises the relaxation into visible steps.
+shader3 = shaders/ghost.slang
+scale_type3 = viewport
+scale3 = 1.0
+filter_linear3 = false
+float_framebuffer3 = true
+
+# Aged panel: dead electrode lines, vinegar syndrome, dust, illumination faults.
+# After ghosting, so damage never feeds the persistence loop.
+shader4 = shaders/defects.slang
+scale_type4 = viewport
+scale4 = 1.0
+filter_linear4 = false
+float_framebuffer4 = true
+
+# Screen-space finish.
+shader5 = shaders/finish.slang
+scale_type5 = viewport
+scale5 = 1.0
+filter_linear5 = true
+
+# Reflector sheet grain, baked by tools/bake_grain.py (seed 7, paperScale 0.45).
+textures = "GrainTex"
+GrainTex = shaders/grain.png
+GrainTex_linear = true
+GrainTex_mipmap = true
+GrainTex_wrap_mode = clamp_to_edge
