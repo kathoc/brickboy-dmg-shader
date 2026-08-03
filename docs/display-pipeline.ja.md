@@ -737,7 +737,7 @@ __rf.renderBatch(base64)             // 生フレームバッファ → 描画�
 
 | 文書 | 内容 |
 |---|---|
-| [`docs/dmg-panel-color.md`](dmg-panel-color.md) | 実機写真 10 個体での色の実測と、撤回した仮説の記録 |
+| [`docs/dmg-panel-color.ja.md`](dmg-panel-color.ja.md) | 実機写真 10 個体での色の実測と、撤回した仮説の記録 |
 | [`docs/hardware-profiles-research.md`](hardware-profiles-research.md) | 機種別プロファイルの根拠（§1〜§8） |
 | [`docs/lcd-stack-comparison.md`](lcd-stack-comparison.md) | 液晶スタックの層構成の比較 |
 | [`docs/lcd-realism-ideas.md`](lcd-realism-ideas.md) | 検討した表現の一覧（採用・不採用の別つき） |
