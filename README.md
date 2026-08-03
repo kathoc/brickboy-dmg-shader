@@ -18,6 +18,8 @@ implementation: the maths, the pass order and the constants come from there.
 | parameter defaults | `src/display/profiles/dmg.json` |
 | module geometry | `src/display/pipeline.ts` (`PANEL_MARGIN` 4 → 168×152) |
 | tau derivation | `src/display/pipeline.ts` (`8 + 102·strength`, fall = ×0.35) |
+| `docs/display-pipeline.ja.md` | brickboy `docs/` (verbatim) |
+| `docs/dmg-panel-color.ja.md` | brickboy `docs/` (verbatim) |
 
 Not yet ported: the non-DMG colour-correction modes (`cgb-byuu`, `gba-byuu`).
 
@@ -70,6 +72,28 @@ Pixel-level comparison against brickboy itself. `src/render-harness.ts` exposes
 `window.__rf.renderBatch()` under `?renderfarm=1` and is documented as pixel
 identical to the app, so the same input frames can be pushed through both and
 differenced, rather than judging by eye.
+
+## Where the numbers come from
+
+`docs/display-pipeline` is brickboy's own full specification of the look, written
+so it can be re-implemented on any core in any language. It is bundled verbatim
+and it, not this README, is the authority. Both documents ship in Japanese
+(`.ja.md`, the original) and English (`.en.md`, a translation — the Japanese wins
+where they disagree). The figures they reference live in the brickboy repository
+and are not bundled.
+
+Read its opening before trusting any constant. In short: the values are **not
+instrument measurements of real hardware**. They start from the author's memory
+of the real thing, are assembled against published specs, technical write-ups and
+photographs, then tuned until it looks right. The document marks which parts have
+a cited source (the colour-correction matrices, the boundary values) and which
+are tuning, and it deliberately keeps the conclusions that were later withdrawn
+so the same traps are not walked into twice.
+
+`docs/dmg-panel-color` is the part that *is* a measurement: the panel colour
+checked against photographs of ten real units. Its own summary is worth
+repeating - no evidence was found that brickboy's colour is wrong, and five
+plausible conclusions were reached and withdrawn along the way.
 
 ## Licence
 
