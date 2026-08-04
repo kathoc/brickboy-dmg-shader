@@ -103,3 +103,13 @@ The shader bodies, constants and the measurements behind them come from
 **brickboy** (`src/display/`). This repository is a derivative work: the pipeline
 was translated from GLSL ES 3.0 to slang and the four adaptations listed above
 were made. Everything else is that code.
+
+## Support
+
+This is free, and it stays free. But it was a lot of measuring against real
+hardware to get right, and if any of it is useful to you, a little help would
+genuinely make me happy.
+
+[**Sponsor @kathoc**](https://github.com/sponsors/kathoc)
+
+No pressure at all — a star or a bug report is welcome too.
