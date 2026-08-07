@@ -14,6 +14,7 @@ layout(push_constant) uniform Push
     float bb_baseline_alpha;
     float bb_grid_contrast;
     float bb_bg_r, bb_bg_g, bb_bg_b;
+    float bb_gap_r, bb_gap_g, bb_gap_b;
     float bb_drop_offset;
     float bb_drop_blur;
     float bb_drop_opacity;
@@ -34,6 +35,11 @@ layout(push_constant) uniform Push
 #pragma parameter bb_bg_r "Panel bg R" 0.930 0.0 1.0 0.002
 #pragma parameter bb_bg_g "Panel bg G" 0.850 0.0 1.0 0.002
 #pragma parameter bb_bg_b "Panel bg B" 0.586 0.0 1.0 0.002
+// The gap colour is shade 0 x gapGain (dmg.json's palette[0], gain 1.0). It is
+// NOT the bare reflector - see the derivation at the use site.
+#pragma parameter bb_gap_r "Gap R (shade 0)" 0.860 0.0 1.0 0.002
+#pragma parameter bb_gap_g "Gap G (shade 0)" 0.811 0.0 1.0 0.002
+#pragma parameter bb_gap_b "Gap B (shade 0)" 0.533 0.0 1.0 0.002
 #pragma parameter bb_drop_offset  "Air-gap depth"     1.35 0.0 4.0 0.05
 #pragma parameter bb_drop_blur    "Shadow blur"       0.85 0.0 3.0 0.05
 #pragma parameter bb_drop_opacity "Shadow opacity"    0.34 0.0 1.0 0.01
@@ -135,9 +141,18 @@ void main()
         vec2 m = smoothstep(vec2(0.0), e, cell) * smoothstep(vec2(0.0), e, 1.0 - cell);
         float body = m.x * m.y;
 
-        // The gap shows the reflector between pixels, only lightly shadowed, so
-        // the sheet reads clearly rather than as dark grid lines.
-        vec3 gap = bgTint * (1.0 - param.bb_shadow_opacity * 0.4);
+        // The gap is where no electrode covers the sheet, so its light goes
+        // through UN-DRIVEN LC and back off the reflector - a path at least as
+        // open as the off pixel's. That is shade 0 (x gapGain, 1.0 here), which
+        // makes "the gap is never darker than shade 0" structural rather than
+        // something the tuned numbers happen to satisfy.
+        //
+        // It used to be bgTint darkened by the grid shadow opacity, wrong in
+        // both terms: bgTint is the BARE reflector, a different optical path
+        // that measures darker than shade 0 on real hardware, and darkening it
+        // again drew a dark grid over the light shades. On the panel the mesh is
+        // LIGHT over dark pixels and nearly invisible on a light field.
+        vec3 gap = vec3(param.bb_gap_r, param.bb_gap_g, param.bb_gap_b);
         vec3 gridded = mix(gap, mix(bgTint, base, 1.0 - param.bb_baseline_alpha), body);
 
         gridded = (gridded - 0.5) * param.bb_grid_contrast + 0.5;
