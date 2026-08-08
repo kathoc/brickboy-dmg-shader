@@ -15,7 +15,7 @@ implementation: the maths, the pass order and the constants come from there.
 | `shaders/defects.slang` | `shaders.ts` `FRAG_DEFECTS` |
 | `shaders/finish.slang` | `shaders.ts` `FRAG_PASSTHROUGH` (present finish) |
 | `tools/bake_grain.py` | `reflector.ts` `buildGrainTexture` |
-| parameter defaults | `src/display/profiles/dmg.json` |
+| parameter defaults | `src/display/profiles/dmg-real.json` |
 | module geometry | `src/display/pipeline.ts` (`PANEL_MARGIN` 4 → 168×152) |
 | tau derivation | `src/display/pipeline.ts` (`8 + 102·strength`, fall = ×0.35) |
 | `docs/display-pipeline.ja.md` | brickboy `docs/` (verbatim) |
