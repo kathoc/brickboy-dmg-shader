@@ -1,7 +1,13 @@
 shaders = 6
 
-# Ported from brickboy's src/display pipeline (DMG-01, dmg.json - the
-# nostalgia profile). For the measured one, use brickboy-dmg-real.slangp.
+# brickboy's DMG-01 pipeline with dmg-real.json - the profile measured off the
+# owner's own unit, rather than the SameBoy-derived palette everyone remembers.
+#
+# It is greener, much lower-contrast, and draws the dot grid at full strength,
+# because that is what the panel does. It is also markedly harder to read, which
+# is not a flaw in the measurement: a reflective STN panel under room light is
+# harder to read than memory allows. Use brickboy-dmg.slangp for the look; use
+# this one to find out whether your sprites survive the real thing.
 # Pass order matches src/display/pipeline.ts: crosstalk field -> colour correct
 # -> grid -> ghost -> present finish.
 
@@ -54,3 +60,30 @@ GrainTex = shaders/grain.png
 GrainTex_linear = true
 GrainTex_mipmap = true
 GrainTex_wrap_mode = clamp_to_edge
+
+# ---- dmg-real.json ----------------------------------------------------------
+parameters = "bb_p0r;bb_p0g;bb_p0b;bb_p1r;bb_p1g;bb_p1b;bb_p2r;bb_p2g;bb_p2b;bb_p3r;bb_p3g;bb_p3b;bb_bg_r;bb_bg_g;bb_bg_b;bb_gap_r;bb_gap_g;bb_gap_b;bb_drop_r;bb_drop_g;bb_drop_b;bb_brightness;bb_strength;bb_baseline_alpha"
+bb_p0r = "0.574"
+bb_p0g = "0.769"
+bb_p0b = "0.321"
+bb_p1r = "0.269"
+bb_p1g = "0.708"
+bb_p1b = "0.279"
+bb_p2r = "0.212"
+bb_p2g = "0.635"
+bb_p2b = "0.382"
+bb_p3r = "0.127"
+bb_p3g = "0.578"
+bb_p3b = "0.412"
+bb_bg_r = "0.740"
+bb_bg_g = "0.673"
+bb_bg_b = "0.329"
+bb_gap_r = "0.574"
+bb_gap_g = "0.769"
+bb_gap_b = "0.321"
+bb_drop_r = "0.316"
+bb_drop_g = "0.311"
+bb_drop_b = "0.177"
+bb_brightness = "1.000"
+bb_strength = "1.000"
+bb_baseline_alpha = "0.000"

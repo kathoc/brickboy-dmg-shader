@@ -33,24 +33,24 @@ layout(push_constant) uniform Push
 } param;
 
 // dmg.json dmgPalette
-#pragma parameter bb_p0r "Shade 0 R" 0.574 0.0 1.0 0.002
-#pragma parameter bb_p0g "Shade 0 G" 0.769 0.0 1.0 0.002
-#pragma parameter bb_p0b "Shade 0 B" 0.321 0.0 1.0 0.002
-#pragma parameter bb_p1r "Shade 1 R" 0.269 0.0 1.0 0.002
-#pragma parameter bb_p1g "Shade 1 G" 0.708 0.0 1.0 0.002
-#pragma parameter bb_p1b "Shade 1 B" 0.279 0.0 1.0 0.002
-#pragma parameter bb_p2r "Shade 2 R" 0.212 0.0 1.0 0.002
-#pragma parameter bb_p2g "Shade 2 G" 0.635 0.0 1.0 0.002
-#pragma parameter bb_p2b "Shade 2 B" 0.382 0.0 1.0 0.002
-#pragma parameter bb_p3r "Shade 3 R" 0.127 0.0 1.0 0.002
-#pragma parameter bb_p3g "Shade 3 G" 0.578 0.0 1.0 0.002
-#pragma parameter bb_p3b "Shade 3 B" 0.412 0.0 1.0 0.002
+#pragma parameter bb_p0r "Shade 0 R" 0.860 0.0 1.0 0.002
+#pragma parameter bb_p0g "Shade 0 G" 0.811 0.0 1.0 0.002
+#pragma parameter bb_p0b "Shade 0 B" 0.533 0.0 1.0 0.002
+#pragma parameter bb_p1r "Shade 1 R" 0.550 0.0 1.0 0.002
+#pragma parameter bb_p1g "Shade 1 G" 0.700 0.0 1.0 0.002
+#pragma parameter bb_p1b "Shade 1 B" 0.400 0.0 1.0 0.002
+#pragma parameter bb_p2r "Shade 2 R" 0.280 0.0 1.0 0.002
+#pragma parameter bb_p2g "Shade 2 G" 0.510 0.0 1.0 0.002
+#pragma parameter bb_p2b "Shade 2 B" 0.260 0.0 1.0 0.002
+#pragma parameter bb_p3r "Shade 3 R" 0.130 0.0 1.0 0.002
+#pragma parameter bb_p3g "Shade 3 G" 0.360 0.0 1.0 0.002
+#pragma parameter bb_p3b "Shade 3 B" 0.170 0.0 1.0 0.002
 // grid.bgTint - the unlit reflector colour
-#pragma parameter bb_bg_r "Panel bg R" 0.740 0.0 1.0 0.002
-#pragma parameter bb_bg_g "Panel bg G" 0.673 0.0 1.0 0.002
-#pragma parameter bb_bg_b "Panel bg B" 0.329 0.0 1.0 0.002
+#pragma parameter bb_bg_r "Panel bg R" 0.930 0.0 1.0 0.002
+#pragma parameter bb_bg_g "Panel bg G" 0.850 0.0 1.0 0.002
+#pragma parameter bb_bg_b "Panel bg B" 0.586 0.0 1.0 0.002
 
-#pragma parameter bb_brightness   "Brightness"        1.00 0.0 2.0 0.01
+#pragma parameter bb_brightness   "Brightness"        0.88 0.0 2.0 0.01
 #pragma parameter bb_contrast     "Contrast"          0.88 0.0 2.0 0.01
 #pragma parameter bb_bleed        "STN bleed"         0.16 0.0 1.0 0.01
 #pragma parameter bb_saturation   "Saturation"        0.85 0.0 2.0 0.01

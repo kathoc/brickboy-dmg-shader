@@ -27,25 +27,25 @@ layout(push_constant) uniform Push
     float bb_mask_r, bb_mask_g, bb_mask_b;
 } param;
 
-#pragma parameter bb_strength       "Grid strength"       1.00 0.0 1.0 0.01
+#pragma parameter bb_strength       "Grid strength"       0.62 0.0 1.0 0.01
 #pragma parameter bb_shadow_opacity "Grid gap darkness"   0.60 0.0 1.0 0.01
 #pragma parameter bb_pixel_size     "Dot fill"            0.80 0.3 1.0 0.01
-#pragma parameter bb_baseline_alpha "Unlit dot opacity"   0.00 0.0 1.0 0.01
+#pragma parameter bb_baseline_alpha "Unlit dot opacity"   0.10 0.0 1.0 0.01
 #pragma parameter bb_grid_contrast  "Grid contrast"       0.95 0.5 1.5 0.01
-#pragma parameter bb_bg_r "Panel bg R" 0.740 0.0 1.0 0.002
-#pragma parameter bb_bg_g "Panel bg G" 0.673 0.0 1.0 0.002
-#pragma parameter bb_bg_b "Panel bg B" 0.329 0.0 1.0 0.002
-// The gap colour is shade 0 x gapGain (dmg-real's palette[0], gain 1.0). It is
+#pragma parameter bb_bg_r "Panel bg R" 0.930 0.0 1.0 0.002
+#pragma parameter bb_bg_g "Panel bg G" 0.850 0.0 1.0 0.002
+#pragma parameter bb_bg_b "Panel bg B" 0.586 0.0 1.0 0.002
+// The gap colour is shade 0 x gapGain (the profile palette[0], gain 1.0). It is
 // NOT the bare reflector - see the derivation at the use site.
-#pragma parameter bb_gap_r "Gap R (shade 0)" 0.574 0.0 1.0 0.002
-#pragma parameter bb_gap_g "Gap G (shade 0)" 0.769 0.0 1.0 0.002
-#pragma parameter bb_gap_b "Gap B (shade 0)" 0.321 0.0 1.0 0.002
+#pragma parameter bb_gap_r "Gap R (shade 0)" 0.860 0.0 1.0 0.002
+#pragma parameter bb_gap_g "Gap G (shade 0)" 0.811 0.0 1.0 0.002
+#pragma parameter bb_gap_b "Gap B (shade 0)" 0.533 0.0 1.0 0.002
 #pragma parameter bb_drop_offset  "Air-gap depth"     1.35 0.0 4.0 0.05
 #pragma parameter bb_drop_blur    "Shadow blur"       0.85 0.0 3.0 0.05
 #pragma parameter bb_drop_opacity "Shadow opacity"    0.34 0.0 1.0 0.01
-#pragma parameter bb_drop_r "Shadow R" 0.316 0.0 1.0 0.002
-#pragma parameter bb_drop_g "Shadow G" 0.311 0.0 1.0 0.002
-#pragma parameter bb_drop_b "Shadow B" 0.177 0.0 1.0 0.002
+#pragma parameter bb_drop_r "Shadow R" 0.397 0.0 1.0 0.002
+#pragma parameter bb_drop_g "Shadow G" 0.391 0.0 1.0 0.002
+#pragma parameter bb_drop_b "Shadow B" 0.222 0.0 1.0 0.002
 #pragma parameter bb_paper        "Reflector grain"   0.03 0.0 0.3 0.005
 #pragma parameter bb_mask_sliver  "Bare sliver px"    1.60 0.0 6.0 0.1
 #pragma parameter bb_mask_width   "Mask width px"     1.80 0.0 8.0 0.1

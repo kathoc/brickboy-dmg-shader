@@ -54,12 +54,12 @@ layout(push_constant) uniform Push
 // #pragma parameter in the shader that declares it, or RetroArch rejects the
 // block as an unknown semantic; the values themselves are global by name.
 #pragma parameter bb_seed "Unit seed"   7.0 0.0 64.0 1.0
-#pragma parameter bb_bg_r "Panel bg R" 0.740 0.0 1.0 0.002
-#pragma parameter bb_bg_g "Panel bg G" 0.673 0.0 1.0 0.002
-#pragma parameter bb_bg_b "Panel bg B" 0.329 0.0 1.0 0.002
-#pragma parameter bb_p3r  "Shade 3 R"  0.127 0.0 1.0 0.002
-#pragma parameter bb_p3g  "Shade 3 G"  0.578 0.0 1.0 0.002
-#pragma parameter bb_p3b  "Shade 3 B"  0.412 0.0 1.0 0.002
+#pragma parameter bb_bg_r "Panel bg R" 0.930 0.0 1.0 0.002
+#pragma parameter bb_bg_g "Panel bg G" 0.850 0.0 1.0 0.002
+#pragma parameter bb_bg_b "Panel bg B" 0.586 0.0 1.0 0.002
+#pragma parameter bb_p3r  "Shade 3 R"  0.130 0.0 1.0 0.002
+#pragma parameter bb_p3g  "Shade 3 G"  0.360 0.0 1.0 0.002
+#pragma parameter bb_p3b  "Shade 3 B"  0.170 0.0 1.0 0.002
 
 layout(std140, set = 0, binding = 0) uniform UBO
 {
